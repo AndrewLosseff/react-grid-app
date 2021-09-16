@@ -1,8 +1,8 @@
+import Grid from "./components/Grid"
+
 const App = () => {
   return (
-    <div>
-      
-    </div>
+      <Grid />
   )
 }
 

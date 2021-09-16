@@ -1,0 +1,13 @@
+.wrapper {
+    width: max-content;
+    margin: auto;
+}
+
+.wrapper > div {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper > div:nth-child(odd) {
+    background-color: bisque;
+}
