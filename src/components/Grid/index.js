@@ -1,21 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import styles from './Grid.module.css'
-import { BASE_GRID } from '../../helpers/consts'
 import Row from '../Row'
-
+import { BASE_GRID } from '../../helpers/consts'
+import { updateCellValueOnClick } from '../../helpers/functions'
 
 
 const Grid = () => {
 
     const [grid, setGrid] = useState(BASE_GRID)
+
+    const onCellClick = useCallback(
+        (rowIndex, columnIndex) => {
+          let newGrid = updateCellValueOnClick(grid, rowIndex, columnIndex);
+          setGrid(newGrid);
+        },
+        [grid]
+      );
     
     return (
         <div className={styles.wrapper}>
             {grid.map((row, rowIndex) => (
                 <Row 
                     key={rowIndex}
-                    indrowIndexex={rowIndex}
+                    rowIndex={rowIndex}
                     row={row}
+                    onClick={onCellClick}
                 />
             ))}
         </div>
