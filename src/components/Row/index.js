@@ -1,10 +1,10 @@
-import Cell from "../Cell"
+import { MemoizedCell } from "../Cell"
 
 const Row = ({row, rowIndex, onClick}) => {
     return (
         <div>
            {row.map((cell, columnIndex) => (
-               <Cell 
+               <MemoizedCell 
                     key={columnIndex}
                     cell={cell}
                     onClick={onClick}

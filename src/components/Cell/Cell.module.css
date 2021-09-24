@@ -1,7 +1,7 @@
 .wrapper {
     width: 20px;
     height: 20px;
-    border: 1px solid salmon;
+    border: 1px solid #FF5733;
     font-size: 17px;
     text-align: center;
     display: inline-block;
@@ -9,4 +9,30 @@
 
 .wrapper:hover {
     cursor: pointer;
+}
+
+.wrapper:active {
+    animation: highlightCell 1000ms ease-out;
+}
+  
+.wrapper:empty {
+    animation: resetCell 2000ms ease-out;
+}
+
+@keyframes highlightCell {
+    0% {
+        background-color: #FFFF8A;
+    }
+    100% {
+        background-color: inherit;
+    }
+}
+
+@keyframes resetCell {
+    0% {
+        background-color: #A3A300;
+    }
+    100% {
+        background-color: inherit;
+    }
 }

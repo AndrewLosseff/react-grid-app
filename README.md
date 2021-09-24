@@ -11,3 +11,16 @@
 - Every change to a cell should cause the cell to briefly light up yellow.
 
 - If at least 5 successive numbers in the cells form a part of a Fibonacci sequence, shortly light these cells up green and then empty these cells.
+
+## Two possible ways
+
+- 2D array (Matrix) with or without row and column id check
+- Hashtable
+
+## TODO:
+
+- Add more accurate way to chek for SuccessiveNumbers
+- Add ifSuccessiveNumbersColumns
+- Improve render with postion index && memoization
+- Add HashTable option
+- Add CSS vars for colors
