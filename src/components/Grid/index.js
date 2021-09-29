@@ -38,7 +38,6 @@ const Grid = () => {
         const successiveNumbers = ifSuccessiveNumbers(grid)
         if(successiveNumbers.length) {
             resetSuccessiveNumbers(successiveNumbers)
-            console.log('successiveNumbers', successiveNumbers)
         }
     }, [grid, resetSuccessiveNumbers])
     

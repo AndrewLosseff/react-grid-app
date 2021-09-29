@@ -61,8 +61,15 @@ const ifSuccessiveNumbersColumns = (grid) => {
 
 export const ifSuccessiveNumbers = (grid) => [...ifSuccessiveNumbersRows(grid), ...ifSuccessiveNumbersColumns(grid)]
 
-export const areEqualCellProps = (prevProps, newProps) => (
-    prevProps.cell === newProps.cell &&
-    prevProps.rowIndex === newProps.rowIndex &&
-    prevProps.columnIndex === newProps.columnIndex
-)
+export const areEqualCellProps = (prevProps, newProps) => {
+    if(
+        !!prevProps.cell && !!newProps.cell && 
+        prevProps.cell === newProps.cell &&
+        prevProps.rowIndex === newProps.rowIndex &&
+        prevProps.columnIndex === newProps.columnIndex
+    ) {
+        return true
+    } else {
+        return false
+    }
+}

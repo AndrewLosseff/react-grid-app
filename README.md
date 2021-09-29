@@ -24,3 +24,4 @@
 - Improve render with postion index && memoization
 - Add HashTable option
 - Add CSS vars for colors
+- Remove highlight on the first load
