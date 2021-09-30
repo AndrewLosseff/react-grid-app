@@ -1,7 +1,9 @@
+@import '../../styles/vars.css';
+
 .wrapper {
     width: 20px;
     height: 20px;
-    border: 1px solid #FF5733;
+    border: 1px solid var(--color-salmon);
     font-size: 17px;
     text-align: center;
     display: inline-block;
@@ -21,7 +23,7 @@
 
 @keyframes highlightCell {
     0% {
-        background-color: #FFFF8A;
+        background-color: var(--color-yellow);
     }
     100% {
         background-color: inherit;
@@ -30,7 +32,7 @@
 
 @keyframes resetCell {
     0% {
-        background-color: #A3A300;
+        background-color: var(--color-green);
     }
     100% {
         background-color: inherit;
