@@ -25,3 +25,4 @@
 - Add HashTable option
 - Add CSS vars for colors
 - Remove highlight on the first load
+- Add eslint and prettier

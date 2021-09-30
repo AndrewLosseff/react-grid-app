@@ -1,13 +1,17 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import styles from './Grid.module.css'
 import Row from '../Row'
-import { BASE_GRID } from '../../helpers/consts'
+import { BASE_GRID, GRID_SIZE } from '../../helpers/consts'
 import { ifSuccessiveNumbers, updateCellValueOnClick } from '../../helpers/functions'
+import { fibonacciCalculator } from '../../helpers/fibonacciCalculator'
 
 
 const Grid = () => {
 
     const [grid, setGrid] = useState(BASE_GRID)
+    const [number] = useState(GRID_SIZE);
+
+    const memoizedfibonacciCalculator = useMemo(() => fibonacciCalculator(number), [number]);
 
     const onCellClick = useCallback (
         (rowIndex, columnIndex) => {
@@ -35,11 +39,11 @@ const Grid = () => {
     );
 
     useEffect(() => {
-        const successiveNumbers = ifSuccessiveNumbers(grid)
+        const successiveNumbers = ifSuccessiveNumbers(grid, memoizedfibonacciCalculator)
         if(successiveNumbers.length) {
             resetSuccessiveNumbers(successiveNumbers)
         }
-    }, [grid, resetSuccessiveNumbers])
+    }, [grid, resetSuccessiveNumbers, memoizedfibonacciCalculator])
     
     return (
         <div className={styles.wrapper}>
