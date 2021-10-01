@@ -26,3 +26,7 @@
 - Add CSS vars for colors
 - Remove highlight on the first load
 - Add eslint and prettier
+- Add save and load functionality
+- Make dynamic grid
+- Some state API options?
+- 
